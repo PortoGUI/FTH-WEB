@@ -1,0 +1,92 @@
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
+  <nz-card class="login-card" [nzBordered]="false">
+    <h1>Fusion Trade Hub</h1>
+    <ng-container *ngIf="!registerMode; else RegisterTemplate">
+      <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitLogin()">
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Campo obrigatório">
+            <nz-input-group>
+              <input type="text" nz-input formControlName="login" placeholder="Login"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Campo obrigatório">
+            <nz-input-group>
+              <input type="password" nz-input formControlName="password" placeholder="Senha"/>
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <div nz-row class="login-form-margin">
+          <div nz-col>
+            <a (click)="onForgotPasswordClick()">Esqueci minha senha</a>
+          </div>
+        </div>
+        <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Entrar</button>
+        Ou
+        <a (click)="toggleRegisterMode()">Cadastre-se</a>
+      </form>
+    </ng-container>
+  </nz-card>
+</div>
+
+<button class="float-button" nz-button nzType="primary" nzShape="circle" (click)="toggleTheme()">
+  <ng-container [ngSwitch]="themeMode">
+    <ng-container *ngSwitchCase="0">
+      <i class="material-icons">dark_mode</i>
+    </ng-container>
+    <ng-container *ngSwitchCase="1">
+      <i class="material-icons">light_mode</i>
+    </ng-container>
+  </ng-container>
+</button>
+
+<ng-template #RegisterTemplate>
+  <form nz-form [formGroup]="registerForm" class="login-form" (ngSubmit)="submitRegister()">
+    <nz-switch class="form-check" [ngModel]="checkboxValue" [ngModelOptions]="{standalone: true}"
+               (ngModelChange)="onCheckboxChange()" nzSize="small" nzCheckedChildren="Vou vender"
+               nzUnCheckedChildren="Vou comprar">
+    </nz-switch>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Campo obrigatório">
+        <nz-input-group>
+          <input type="text" nz-input formControlName="name" placeholder="Nome Completo"/>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Campo obrigatório">
+        <nz-input-group>
+          <input type="text" nz-input formControlName="document" placeholder="Documento ( CPF / CNPJ )"/>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Campo obrigatório">
+        <nz-input-group>
+          <input type="text" nz-input formControlName="email" placeholder="E-mail"/>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Campo obrigatório">
+        <nz-input-group>
+          <input type="text" nz-input formControlName="login" placeholder="Login"/>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="Campo obrigatório">
+        <nz-input-group>
+          <input type="password" nz-input formControlName="password" placeholder="Senha"/>
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Enviar</button>
+    Ou
+    <a (click)="toggleRegisterMode()">Faça login</a>
+  </form>
+</ng-template>

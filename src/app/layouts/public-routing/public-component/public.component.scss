@@ -1,0 +1,36 @@
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-card {
+  min-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+.login-form {
+  max-width: 350px;
+}
+
+.login-form-margin, .form-check {
+  margin-bottom: 16px;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.float-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
