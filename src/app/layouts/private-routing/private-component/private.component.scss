@@ -1,0 +1,73 @@
+.layout {
+  height: 100vh;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  height: 35px;
+  width: 35px;
+
+  & h2 {
+    padding: 0;
+    margin: 0;
+  }
+
+  & img {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  background-color: white;
+  float: right;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    height: 35px;
+    width: 35px;
+  }
+}
+
+.dropdown-menu {
+  width: 100px;
+  padding: 0;
+}
+
+nz-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 20px 0 23px;
+}
+
+.side-menu {
+  height: 100%;
+  border-right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.inner-layout {
+  padding: 0 15px 15px;
+}
+
+nz-breadcrumb {
+  margin: 13px 0;
+}
+
+nz-content {
+  background: #fff;
+  padding: 24px;
+  min-height: 280px;
+}

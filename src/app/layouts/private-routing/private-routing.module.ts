@@ -1,10 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {PrivateComponent} from './private.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+
+import {PrivateModule} from './private-component/private.module';
+
+import {PrivateComponent} from './private-component/private.component';
 import {NotFoundComponent} from '../../../shared/pages/not-found.component';
 
 const routes: Routes = [
-  { path: '', component: PrivateComponent,
+  {
+    path: '', component: PrivateComponent,
     // children: [{path: '', loadChildren: () => import('../path').then(m => m.Module)}],
   },
   {
@@ -13,7 +17,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes), PrivateModule],
+  exports: [RouterModule],
 })
-export class PrivateRoutingModule { }
+export class PrivateRoutingModule {
+}
