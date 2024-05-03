@@ -2,10 +2,10 @@ import {Component} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 import {ThemeService} from '../../../../theme/theme.service';
-import {AlertType, AlertUtils} from '../../../../shared/utls/alert.utils';
+import {AlertType, AlertUtils} from '../../../../shared/utils/alert.utils';
 import {Router} from '@angular/router';
 import {RequestService} from '../../../../shared/services/request.service';
-import {EndpointUtils} from '../../../../shared/utls/endpoint.utils';
+import {EndpointUtils} from '../../../../shared/utils/endpoint.utils';
 
 @Component({
   selector: 'fth-public',

@@ -1,6 +1,6 @@
 import {HttpErrorResponse, HttpInterceptorFn} from '@angular/common/http';
 import {catchError, throwError} from 'rxjs';
-import {AlertType, AlertUtils} from '../utls/alert.utils';
+import {AlertType, AlertUtils} from '../utils/alert.utils';
 
 export const corsInterceptor: HttpInterceptorFn = (req, next) => {
   // const authToken = 'TOKEN_HERE';

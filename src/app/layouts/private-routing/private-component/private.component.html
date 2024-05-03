@@ -1,14 +1,15 @@
 <nz-layout class="layout">
   <nz-header>
-    <div class="logo">
+    <div class="logo" (click)="gotoStart()">
       <img src="../../../assets/img/png/angular_logo.png" alt="Logo">
     </div>
     <div class="avatar" nz-dropdown [nzDropdownMenu]="menu">
       <img src="../../../assets/img/svg/profile_pic.svg" alt="User profile"/>
     </div>
     <nz-dropdown-menu #menu="nzDropdownMenu">
-      <ul nz-menu nzSelectable class="dropdown-menu">
-        <li nz-menu-item>Perfil</li>
+      <ul nz-menu class="dropdown-menu">
+        <li nz-menu-item (click)="goToProfile()">Perfil</li>
+        <li nz-menu-item (click)="changeTheme()">Mudar Tema</li>
         <li nz-menu-item nzDanger (click)="logout()">Sair</li>
       </ul>
     </nz-dropdown-menu>
@@ -45,9 +46,10 @@
         <nz-breadcrumb-item>Aplicativo</nz-breadcrumb-item>
       </nz-breadcrumb>
       <nz-content>
-        <router-outlet/>
+        <div id="container">
+          <router-outlet/>
+        </div>
       </nz-content>
     </nz-layout>
   </nz-layout>
 </nz-layout>
-

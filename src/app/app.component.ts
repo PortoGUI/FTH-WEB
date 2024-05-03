@@ -13,7 +13,7 @@ import {NzIconService} from 'ng-zorro-antd/icon';
 })
 export class AppComponent {
 
-  customIcons: string[] = ['store', 'construction', 'dashboard', 'question_answer', 'shopping_cart'];
+  customIcons: string[] = ['store', 'construction', 'dashboard', 'question_answer', 'shopping_cart', 'app_registration'];
 
   constructor(private iconService: NzIconService) {
     this.customIcons.forEach(icon => {

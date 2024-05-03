@@ -33,5 +33,5 @@ import {PublicComponent} from './public.component';
   ],
 })
 
-export class PublicComponentModule {
+export class PublicModule {
 }

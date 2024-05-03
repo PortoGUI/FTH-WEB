@@ -5,11 +5,12 @@ import {PrivateModule} from './private-component/private.module';
 
 import {PrivateComponent} from './private-component/private.component';
 import {NotFoundComponent} from '../../../shared/pages/not-found.component';
+import {RoutingUtils} from '../../../shared/utils/routing/routing.utils';
 
 const routes: Routes = [
   {
     path: '', component: PrivateComponent,
-    // children: [{path: '', loadChildren: () => import('../path').then(m => m.Module)}],
+    children: RoutingUtils.Routes,
   },
   {
     path: '**', component: NotFoundComponent,

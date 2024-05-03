@@ -12,6 +12,4 @@ export const routes: Routes = [
     path: 'in', canActivate: [AuthGuardService],
     loadChildren: () => import('../app/layouts/private-routing/private-routing.module').then(m => m.PrivateRoutingModule)
   },
-  {path: '**', redirectTo: '/register'},
-
 ];
