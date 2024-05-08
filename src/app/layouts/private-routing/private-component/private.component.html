@@ -15,26 +15,25 @@
     </nz-dropdown-menu>
   </nz-header>
   <nz-layout>
-    <nz-sider nzWidth="230px" nzTheme="light">
+    <nz-sider nzWidth="230px" nzTheme="light" [nzCollapsedWidth]="60" [nzCollapsed]="isCollapsed">
       <ul nz-menu nzMode="inline" class="side-menu">
         <ng-container *ngFor="let item of navigationMenu">
-          <ng-container *ngIf="item.open; else ClosedTemplate">
-            <li class="menu-item" nz-submenu nzOpen nzIcon="{{'ct:'+item.icon}}" nzTitle="{{item.name}}">
-              <ng-container [ngTemplateOutlet]="SubitemTemplate"></ng-container>
+          <ng-container *ngIf="item.subItems?.length; else OptionTemplate">
+            <li class="menu-item" nz-submenu nzIcon="{{'ct:'+item.icon}}" nzTitle="{{item.name}}">
+              <ng-container *ngFor="let subitem of item.subItems;">
+                <ul>
+                  <li nz-menu-item [nzSelected]="isSelected(subitem.route)"
+                      (click)="onSelectionChange(subitem)">{{ subitem.name }}
+                  </li>
+                </ul>
+              </ng-container>
             </li>
           </ng-container>
-          <ng-template #ClosedTemplate>
-            <li class="menu-item" nz-submenu nzIcon="{{'ct:'+item.icon}}" nzTitle="{{item.name}}">
-              <ng-container [ngTemplateOutlet]="SubitemTemplate"></ng-container>
+          <ng-template #OptionTemplate>
+            <li nz-menu-item [nzSelected]="isSelected(item.route)" (click)="onSelectionChange(item)">
+              <span class="option-icon" nz-icon nzType="{{'ct:'+item.icon}}"></span>
+              <span>{{ item.name }}</span>
             </li>
-          </ng-template>
-          <ng-template #SubitemTemplate>
-            <ng-container *ngFor="let subitem of item.subItems;">
-              <ul>
-                <!--nzSelected-->
-                <li nz-menu-item>{{ subitem.name }}</li>
-              </ul>
-            </ng-container>
           </ng-template>
         </ng-container>
       </ul>
@@ -42,8 +41,9 @@
     <nz-layout class="inner-layout">
       <nz-breadcrumb>
         <nz-breadcrumb-item>Início</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Lista</nz-breadcrumb-item>
-        <nz-breadcrumb-item>Aplicativo</nz-breadcrumb-item>
+        <ng-container *ngFor="let crumb of selectedBreadCrumb">
+          <nz-breadcrumb-item>{{ crumb }}</nz-breadcrumb-item>
+        </ng-container>
       </nz-breadcrumb>
       <nz-content>
         <div id="container">

@@ -9,6 +9,8 @@ import {NzContentComponent, NzHeaderComponent, NzLayoutComponent, NzSiderCompone
 
 import {PrivateComponent} from './private.component';
 import {NzButtonComponent} from 'ng-zorro-antd/button';
+import {NzIconDirective} from 'ng-zorro-antd/icon';
+import {NzTooltipDirective} from 'ng-zorro-antd/tooltip';
 
 @NgModule({
   declarations: [PrivateComponent],
@@ -26,7 +28,9 @@ import {NzButtonComponent} from 'ng-zorro-antd/button';
     NzBreadCrumbComponent,
     NzDropdownMenuComponent,
     NzBreadCrumbItemComponent,
-    NzButtonComponent
+    NzButtonComponent,
+    NzIconDirective,
+    NzTooltipDirective
   ],
 })
 export class PrivateModule {

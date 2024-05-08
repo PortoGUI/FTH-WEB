@@ -23,6 +23,7 @@
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "ng-zorro-antd": "^17.4.0",
+    "ngx-image-cropper": "^8.0.0",
     "rxjs": "~7.8.0",
     "sweetalert2": "^11.10.8",
     "tslib": "^2.3.0",
