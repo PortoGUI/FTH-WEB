@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageLayoutComponent } from './page-layout.component';
 import {NzCollapseComponent, NzCollapsePanelComponent} from 'ng-zorro-antd/collapse';
+import {NzButtonComponent} from 'ng-zorro-antd/button';
 
 
 
@@ -15,7 +16,8 @@ import {NzCollapseComponent, NzCollapsePanelComponent} from 'ng-zorro-antd/colla
   imports: [
     CommonModule,
     NzCollapseComponent,
-    NzCollapsePanelComponent
+    NzCollapsePanelComponent,
+    NzButtonComponent
   ]
 })
 export class PageLayoutModule { }

@@ -4,6 +4,7 @@ import {SweetAlert2Module} from '@sweetalert2/ngx-sweetalert2';
 import {NzIconService} from 'ng-zorro-antd/icon';
 import {ThemeService} from '../theme/theme.service';
 import {NgIf} from '@angular/common';
+import {ScreenService} from '../shared/services/screen.service';
 
 @Component({
   selector: 'app-root',
@@ -30,9 +31,23 @@ import {NgIf} from '@angular/common';
 export class AppComponent implements AfterViewInit {
   projectRead: boolean = false;
 
-  customIcons: string[] = ['store', 'construction', 'dashboard', 'question_answer', 'shopping_cart', 'app_registration', 'star', 'shopping_bag'];
+  customIcons: string[] = [
+    'store',
+    'construction',
+    'dashboard',
+    'question_answer',
+    'shopping_cart',
+    'app_registration',
+    'star',
+    'shopping_bag',
+    'edit',
+    'delete_forever',
+    'save',
+    'delete',
+    'add',
+  ];
 
-  constructor(private iconService: NzIconService, private themeService: ThemeService) {
+  constructor(private iconService: NzIconService, private themeService: ThemeService, private screenService: ScreenService) {
     this.customIcons.forEach(icon => {
       this.iconService.addIconLiteral(`ct:${icon}`,
         `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
@@ -40,6 +55,7 @@ export class AppComponent implements AfterViewInit {
                 </svg>`
       );
     });
+    this.screenService.init();
   }
 
   ngAfterViewInit(): void {

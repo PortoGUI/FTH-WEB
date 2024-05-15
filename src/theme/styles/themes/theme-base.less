@@ -1,7 +1,7 @@
 // Override less variables to here
 // View all variables: https://github.com/NG-ZORRO/ng-zorro-antd/blob/master/components/style/themes/default.less
 
-@primary-color: #634E9D;
+@primary-color: #4474EE;
 
 //LOGGED
 nz-header {
@@ -177,4 +177,32 @@ nz-breadcrumb-item {
 
 .ant-menu-submenu-title, .ant-menu-item {
   padding: 0 10px !important;
+}
+
+
+// TABLE
+.ant-table-content > table > thead > tr > th {
+  padding: 0.5rem 0.5rem 0.5rem 4px;
+  border-top: 1px solid rgba(@border-color-base, 0.4);
+  border-right: 1px solid rgba(@border-color-base, 0.4);
+  border-bottom: 1px solid rgba(@border-color-base, 0.4);
+}
+
+.ant-table-content > table > thead > tr > #action-data-view {
+  width: 73px;
+}
+
+.ant-table-content > table > tbody > tr > td {
+  padding: 0 0 0 4px;
+  border-right: 1px solid rgba(@border-color-base, 0.4);
+  border-bottom: 1px solid rgba(@border-color-base, 0.4);
+}
+
+.ant-table-content > table > tbody > tr:nth-child(even) {
+  background-color: lighten(rgba(@primary-color, 0.05), 20%);
+}
+
+.ant-table-content > table > tbody > tr:hover {
+  background-color: lighten(rgba(@primary-color, 0.1), 20%);
+  cursor: pointer;
 }

@@ -11,15 +11,17 @@ import {NgIf} from '@angular/common';
   imports: [ImageCropperComponent, NzButtonComponent, NzModalComponent, NzModalContentDirective, NgIf],
   providers: [NzModalService],
   template: `
-    <div class="preview">
-      <img [src]="croppedImage.length? croppedImage : '../../../../assets/img/svg/profile_pic.svg'" alt="Preview da imagem Selecionada">
-    </div>
+    <div class="ant-row" style="width: 230px">
+      <div class="ant-col-24 center">
+        <div class="preview">
+          <img [src]="croppedImage.length? croppedImage : '../../../../assets/img/svg/profile_pic.svg'" alt="Preview da imagem Selecionada">
+        </div>
+      </div>
 
-    <div class="ant-row">
-      <div class="ant-col-24 ant-col-md-12">
+      <div class="ant-col-24 ant-col-sm-12">
         <button class="image-button" nz-button nzType="default" nzDanger type="button" (click)="clearImage()">Limpar</button>
       </div>
-      <div class="ant-col-24 ant-col-md-12">
+      <div class="ant-col-24 ant-col-sm-12">
         <button class="image-button" nz-button nzType="primary" type="button" (click)="fileInput.click()">Escolher</button>
       </div>
     </div>

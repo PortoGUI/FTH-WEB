@@ -10,3 +10,7 @@ html, body {
 a {
   cursor: pointer;
 }
+
+textarea {
+  resize: none !important;
+}

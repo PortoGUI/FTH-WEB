@@ -1,7 +1,7 @@
 <nz-layout class="layout">
   <nz-header>
     <div class="logo" (click)="gotoStart()">
-      <img src="../../../assets/img/png/angular_logo.png" alt="Logo">
+      <img src="../../../assets/img/svg/logo.svg" alt="Logo">
     </div>
     <div class="avatar" nz-dropdown [nzDropdownMenu]="menu">
       <img src="../../../assets/img/svg/profile_pic.svg" alt="User profile"/>
@@ -15,7 +15,7 @@
     </nz-dropdown-menu>
   </nz-header>
   <nz-layout>
-    <nz-sider nzWidth="230px" nzTheme="light" [nzCollapsedWidth]="60" [nzCollapsed]="isCollapsed">
+    <nz-sider nzWidth="230px" nzTheme="light" [nzCollapsedWidth]="42" [nzCollapsed]="isCollapsed">
       <ul nz-menu nzMode="inline" class="side-menu">
         <ng-container *ngFor="let item of navigationMenu">
           <ng-container *ngIf="item.subItems?.length; else OptionTemplate">

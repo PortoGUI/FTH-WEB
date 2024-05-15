@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {RoutingUtils} from '../../../../shared/utils/routing/routing.utils';
 import {ThemeService} from '../../../../theme/theme.service';
 import {BreadcrumbService} from '../../../../shared/services/breadcrumb.service';
+import {ScreenService, ScreenType} from '../../../../shared/services/screen.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'fth-private-comp',
@@ -11,14 +13,15 @@ import {BreadcrumbService} from '../../../../shared/services/breadcrumb.service'
   styleUrls: ['./private.component.scss']
 })
 export class PrivateComponent implements AfterViewInit {
-
+  subscriber: Subscription;
   isCollapsed: boolean = false;
   selectedBreadCrumb: string[] | undefined;
 
   protected navigationMenu: IMenu[];
 
-  constructor(private router: Router, private themeService: ThemeService, private breadCrumbService: BreadcrumbService) {
+  constructor(private router: Router, private themeService: ThemeService, private breadCrumbService: BreadcrumbService, private screenService: ScreenService) {
     this.navigationMenu = MenuUtils.Menu;
+    this.subscriber = this.screenService.screenChange.subscribe((type: ScreenType): boolean => this.isCollapsed = type === ScreenType.XS);
   }
 
   ngAfterViewInit(): void {

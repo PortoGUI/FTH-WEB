@@ -22,7 +22,7 @@ import {Component} from '@angular/core';
     </div>
     <div id="button-content">
       <div id="centered-buttons">
-        <p style="margin: 0">Botoes em desenvolvimento</p>
+        <button nz-button nzType="primary">Salvar</button>
       </div>
     </div>
   `,
@@ -55,6 +55,11 @@ import {Component} from '@angular/core';
       width: 100%;
       display: flex;
       align-items: center;
+      flex-direction: row-reverse;
+    }
+
+    #centered-buttons > button {
+      margin-bottom: 1rem;
     }
   `],
 })
