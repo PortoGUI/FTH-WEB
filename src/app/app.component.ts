@@ -45,13 +45,15 @@ export class AppComponent implements AfterViewInit {
     'save',
     'delete',
     'add',
+    'visibility',
+    'visibility_off',
   ];
 
   constructor(private iconService: NzIconService, private themeService: ThemeService, private screenService: ScreenService) {
     this.customIcons.forEach(icon => {
       this.iconService.addIconLiteral(`ct:${icon}`,
         `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14">
-                  <text x="7" y="10" text-anchor="middle" dominant-baseline="middle" class="material-icons" style="font-size: 12px;">${icon}</text>
+                  <text x="7" y="50%" text-anchor="middle" dominant-baseline="middle" class="material-icons" style="font-size: 12px;">${icon}</text>
                 </svg>`
       );
     });

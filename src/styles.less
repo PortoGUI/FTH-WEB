@@ -13,7 +13,7 @@
 }
 
 // FORM
-.ant-input {
+.ant-input , .ant-input-affix-wrapper{
   margin: 0 0 1rem 0 !important;
   border-top: none !important;
   border-right: none !important;
@@ -21,8 +21,16 @@
   border-radius: 0 !important;
 }
 
-.ant-input:focus {
+.ant-input-affix-wrapper input {
+  margin: 0 !important;
+}
+
+.ant-input:focus, .ant-input-affix-wrapper-focused {
   box-shadow: none !important;
+}
+
+.ant-form-item-explain-error {
+  transform: translate(0, -15px) !important;
 }
 
 .ant-row > div {

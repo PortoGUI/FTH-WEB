@@ -18,7 +18,20 @@ import {Subscription} from 'rxjs';
                 Dados
               </nz-tab>
               <nz-tab nzTitle="Segurança">
-                login e senha
+                <div class="ant-row">
+                  <div class="ant-col-24 ant-col-md-6">
+                    <input nz-input placeholder="Login" type="text"/>
+                  </div>
+                  <div class="ant-col-24 ant-col-md-6">
+                    <input nz-input placeholder="Senha Atual" type="password"/>
+                  </div>
+                  <div class="ant-col-24 ant-col-md-6">
+                    <input nz-input placeholder="Nova Senha" type="password"/>
+                  </div>
+                  <div class="ant-col-24 ant-col-md-6">
+                    <input nz-input placeholder="Confirmar Senha" type="password"/>
+                  </div>
+                </div>
               </nz-tab>
             </nz-tabset>
           </div>

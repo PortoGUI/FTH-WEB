@@ -11,6 +11,7 @@ import {NzInputDirective, NzInputGroupComponent} from 'ng-zorro-antd/input';
 import {NzFormControlComponent, NzFormDirective, NzFormItemComponent} from 'ng-zorro-antd/form';
 
 import {PublicComponent} from './public.component';
+import {NzIconDirective} from 'ng-zorro-antd/icon';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {PublicComponent} from './public.component';
     ReactiveFormsModule,
     NzInputGroupComponent,
     NzFormControlComponent,
+    NzIconDirective,
   ],
 })
 

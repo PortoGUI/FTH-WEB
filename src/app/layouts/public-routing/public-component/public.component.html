@@ -15,8 +15,14 @@
         </nz-form-item>
         <nz-form-item>
           <nz-form-control nzErrorTip="Campo obrigatório">
-            <nz-input-group>
-              <input type="password" nz-input formControlName="password" placeholder="Senha"/>
+            <nz-input-group [nzSuffix]="viewPasswordButton">
+              <input [type]="passwordView ? 'text' : 'password'" nz-input formControlName="password"
+                     placeholder="Senha"/>
+              <ng-template #viewPasswordButton>
+                <span nz-icon nzType="{{passwordView?'ct:visibility':'ct:visibility_off'}}" style="cursor: pointer"
+                      (click)="passwordViewChange($event)" [title]="passwordView ? 'Esconder' : 'Mostrar'">
+                </span>
+              </ng-template>
             </nz-input-group>
           </nz-form-control>
         </nz-form-item>

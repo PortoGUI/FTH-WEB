@@ -19,6 +19,7 @@ export class PublicComponent {
   themeMode: number = 0;
   registerMode: boolean = false;
   checkboxValue: boolean = false;
+  passwordView: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private themeService: ThemeService, private requestService: RequestService, private router: Router) {
     this.loginForm = this.formBuilder.group({
@@ -94,5 +95,10 @@ export class PublicComponent {
 
   onCheckboxChange(): void {
     this.registerForm.controls['type'].setValue(!this.checkboxValue ? 0 : 1);
+  }
+
+  passwordViewChange(event: any): void {
+    event.preventDefault();
+    this.passwordView = !this.passwordView;
   }
 }
