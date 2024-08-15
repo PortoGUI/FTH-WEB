@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 enum ThemeType {
   dark = 'dark',
@@ -11,7 +11,8 @@ enum ThemeType {
 export class ThemeService {
   currentTheme = ThemeType.default;
 
-  constructor() {}
+  constructor() {
+  }
 
   private reverseTheme(theme: string): ThemeType {
     return theme === ThemeType.dark ? ThemeType.default : ThemeType.dark;
@@ -38,6 +39,9 @@ export class ThemeService {
   }
 
   public loadTheme(firstLoad = true): Promise<Event> {
+    if (localStorage.getItem('selected-theme')) {
+      this.currentTheme = localStorage.getItem('selected-theme') as ThemeType;
+    }
     const theme = this.currentTheme;
     if (firstLoad) {
       document.documentElement.classList.add(theme);
@@ -58,6 +62,7 @@ export class ThemeService {
 
   public toggleTheme(): Promise<Event> {
     this.currentTheme = this.reverseTheme(this.currentTheme);
+    localStorage.setItem('selected-theme', this.currentTheme);
     return this.loadTheme(false);
   }
 }

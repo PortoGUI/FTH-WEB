@@ -15,7 +15,17 @@ import {Subscription} from 'rxjs';
           <div [ngClass]="breakpoint ? 'form-align-auto' : 'form-align-full'">
             <nz-tabset>
               <nz-tab nzTitle="Dados pessoais">
-                Dados
+                <div class="ant-row">
+                  <div class="ant-col-24 ant-col-md-5">
+                    <input nz-input placeholder="Data de nascimento" type="date"/>
+                  </div>
+                  <div class="ant-col-24 ant-col-md-19">
+                    <input nz-input placeholder="Nome Completo" type="text"/>
+                  </div>
+                  <div class="ant-col-24 ant-col-md-8">
+                    <input nz-input placeholder="Cadastro Pessoa Física" type="text"/>
+                  </div>
+                </div>
               </nz-tab>
               <nz-tab nzTitle="Segurança">
                 <div class="ant-row">

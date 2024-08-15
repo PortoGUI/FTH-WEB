@@ -25,9 +25,14 @@ export class RoutingUtils {
   static AppPaths: any = {
     PROFILE: 'in/profile',
     PRODUCTS: 'in/register/products',
-    STORE: 'in/sales/store',
-    REPORT: 'in/sales/report',
-    SHOPPING: 'in/shopping',
-    FAVORITE: 'in/favorite',
+    REPORTS: 'in/sales/reports',
+    OVERVIEW: 'in/dashboard/overview',
+    CLIENTS: 'in/clients',
+    SUPPLIERS: 'in/suppliers',
+    SALES: 'in/sales',
+    RETURNS: 'in/returns',
+    EXCHANGES: 'in/exchanges',
+    INVOICES: 'in/invoices',
+    PICKUP: 'in/pickup',
   };
 }

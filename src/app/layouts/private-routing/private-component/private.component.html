@@ -19,7 +19,7 @@
       <ul nz-menu nzMode="inline" class="side-menu">
         <ng-container *ngFor="let item of navigationMenu">
           <ng-container *ngIf="item.subItems?.length; else OptionTemplate">
-            <li class="menu-item" nz-submenu nzIcon="{{'ct:'+item.icon}}" nzTitle="{{item.name}}">
+            <li class="menu-item" nz-submenu [nzOpen]="item.expanded" nzIcon="{{'ct:'+item.icon}}" nzTitle="{{item.name}}">
               <ng-container *ngFor="let subitem of item.subItems;">
                 <ul>
                   <li nz-menu-item [nzSelected]="isSelected(subitem.route)"

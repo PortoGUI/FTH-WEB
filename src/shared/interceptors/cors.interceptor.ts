@@ -14,6 +14,9 @@ export const corsInterceptor: HttpInterceptorFn = (req, next) => {
   return next(authReq).pipe(
     catchError((err: any) => {
       if (err instanceof HttpErrorResponse) {
+        if (err.status === 0 || err.statusText === 'Unknown Error') {
+          AlertUtils.Dialog(AlertType.ERROR, 'Erro no servidor');
+        }
         if (err.status > 400 && err.status < 500) {
           AlertUtils.Dialog(AlertType.ERROR, err.error.error);
         }

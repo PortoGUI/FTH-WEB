@@ -13,7 +13,7 @@ import {GlobalUtils} from '../../utils/global-utils';
     <ng-container *ngIf="!editMode">
       <div class="button-toolbar">
         <button nz-button nzType="primary" (click)="toggleMode()">
-          Adicionar
+          Novo
         </button>
       </div>
     </ng-container>
@@ -24,9 +24,9 @@ import {GlobalUtils} from '../../utils/global-utils';
       <ng-content></ng-content>
       <div class="buttons-container">
         <button nz-button nzType="primary" (click)="save()">
-          Salvar
+          Incluir
         </button>
-        <button nz-button nzType="default" (click)="toggleMode()">
+        <button nz-button nzDanger nzType="default" (click)="toggleMode()">
           Descartar
         </button>
       </div>

@@ -47,6 +47,12 @@ export class AppComponent implements AfterViewInit {
     'add',
     'visibility',
     'visibility_off',
+    'people',
+    'local_shipping',
+    'inventory',
+    'swap_horiz',
+    'assessment',
+    'description',
   ];
 
   constructor(private iconService: NzIconService, private themeService: ThemeService, private screenService: ScreenService) {
